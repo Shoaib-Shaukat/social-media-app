@@ -1,0 +1,178 @@
+/* src/Navbar.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .navbar {
+    background: #333;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: relative; /* Ensure the navbar has a position context */
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 20px;
+    overflow: hidden; /* Hide any overflow */
+  }
+  
+  .navbar-logo {
+    color: #fff;
+    justify-self: start;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+  
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+  }
+  
+  .nav-item {
+    height: 60px;
+  }
+  
+  .nav-links {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+  }
+  
+  .nav-links:hover {
+    background-color: #575757;
+    border-radius: 4px; /* Keep border-radius small to avoid overflow */
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    position: relative; /* Ensure the dropdown is positioned correctly */
+  }
+  
+  .username {
+    margin-right: 10px;
+  }
+  
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 60px; /* Adjust to align with navbar height */
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    z-index: 1000; /* Ensure it is above other content */
+  }
+  
+  .dropdown-item {
+    padding: 10px 20px;
+    color: #333;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .menu-icon {
+      display: block;
+      cursor: pointer;
+    }
+  
+    .nav-menu {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: calc(100vh - 60px);
+      position: absolute;
+      top: 60px;
+      left: -100%;
+      opacity: 1;
+      transition: all 0.5s ease;
+      background: #333;
+      z-index: 1; /* Ensure menu is on top */
+    }
+  
+    .nav-menu.active {
+      left: 0;
+      opacity: 1;
+      transition: all 0.5s ease;
+    }
+  
+    .nav-item {
+      width: 100%;
+    }
+  
+    .nav-links {
+      text-align: center;
+      padding: 2rem;
+      width: 100%;
+      display: table;
+    }
+  
+    .user-info {
+      justify-content: center; /* Center user info in mobile view */
+      padding: 1rem 0;
+    }
+  
+    .dropdown-menu {
+      top: auto;
+      bottom: 60px; /* Position dropdown above navbar in mobile view */
+      right: 20px; /* Align dropdown with user info in mobile view */
+    }
+  }
+  
+  .fas {
+    color: #fff;
+    font-size: 1.8rem;
+  }
+  
+
+.logout-button {
+    padding: 0.5rem 1rem;
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-button:hover {
+    background-color: #d00;
+  }
