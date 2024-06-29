@@ -41,11 +41,19 @@ export const Navbar = () => {
               Home
             </a>
           </li>
-          <li className="nav-item">
-            <a href="/login" className="nav-links">
-              Login
-            </a>
-          </li>
+          {!user ? (
+            <li className="nav-item">
+              <a href="/login" className="nav-links">
+                Login
+              </a>
+            </li>
+          ) : (
+            <li className="nav-item">
+              <a href="/createpost" className="nav-links">
+                Create Post
+              </a>
+            </li>
+          )}
         </ul>
         <div className="user-info">
           {user && (
